@@ -37,10 +37,7 @@ function genLink() {
     let amount = document.getElementById("amount").value.trim();
 
     if (vpa.includes("@")) {
-        document.getElementById("outputd").style.display = "block";
-        document.getElementById("inputd").style.display = "none";
-        document.getElementById("copiedtext").style.visibility = "hidden";
-
+        // build the URL
         let baseUrl = "https://" + window.location.hostname + "/pay?vpa=" + encodeURIComponent(vpa);
         if (amount) {
             baseUrl += "&amount=" + encodeURIComponent(amount);
@@ -51,6 +48,7 @@ function genLink() {
         document.getElementById("invalid").style.visibility = "visible";
     }
 }
+
 
 function copyLink() {
     var copyText = document.getElementById("outlink");
