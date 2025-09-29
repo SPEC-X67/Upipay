@@ -10,25 +10,45 @@ function hideF() {
     document.getElementById("invalid").style.visibility = "hidden";
 }
 
+// function genLink() {
+//     if (vpa.value.indexOf("@") != -1) {
+//         document.getElementById("outputd").style.display = "block";
+//         document.getElementById("inputd").style.display = "none";
+//         document.getElementById("copiedtext").style.visibility = "hidden";
+//         var amountset = document.getElementById("amount").value;
+//         var vpaset = document.getElementById("vpa").value;
+//         if (amountset == "") {
+//             var linkset = "https://" + parser.hostname + "/pay?vpa=" + vpaset;
+//             document.getElementById("outlink").value = linkset;
+//             document.getElementById("outlink").select();
+//         } else {
+//             var linkset = "https://" + parser.hostname + "/pay?vpa=" + vpaset + "&amount=" + amountset;
+//             document.getElementById("outlink").value = linkset;
+//             document.getElementById("outlink").select();
+//         }
+//     } else {
+//         document.getElementById("invalid").style.visibility = "visible";
+//         document.getElementById("vpa").value = "";
+//     }
+// }
+
 function genLink() {
-    if (vpa.value.indexOf("@") != -1) {
+    let vpa = document.getElementById("vpa").value.trim();
+    let amount = document.getElementById("amount").value.trim();
+
+    if (vpa.includes("@")) {
         document.getElementById("outputd").style.display = "block";
         document.getElementById("inputd").style.display = "none";
         document.getElementById("copiedtext").style.visibility = "hidden";
-        var amountset = document.getElementById("amount").value;
-        var vpaset = document.getElementById("vpa").value;
-        if (amountset == "") {
-            var linkset = "https://" + parser.hostname + "/pay?vpa=" + vpaset;
-            document.getElementById("outlink").value = linkset;
-            document.getElementById("outlink").select();
-        } else {
-            var linkset = "https://" + parser.hostname + "/pay?vpa=" + vpaset + "&amount=" + amountset;
-            document.getElementById("outlink").value = linkset;
-            document.getElementById("outlink").select();
+
+        let baseUrl = "https://" + window.location.hostname + "/pay?vpa=" + encodeURIComponent(vpa);
+        if (amount) {
+            baseUrl += "&amount=" + encodeURIComponent(amount);
         }
+
+        window.location.href = baseUrl;
     } else {
         document.getElementById("invalid").style.visibility = "visible";
-        document.getElementById("vpa").value = "";
     }
 }
 
