@@ -10,7 +10,8 @@ if (virpa == null) {
     document.getElementById("content").style.display = "none";
 } else {
     document.getElementById("nothing").style.display = "none";
-    var vpa = params.get('vpa');
+    // var vpa = params.get('vpa');
+    let vpa = "test@me"
     if (am == null) {
         document.getElementById("payingam").innerHTML = "You are paying";
         var upilink = "upi://pay?pn=" + vpa + "&tn=UPIER&pa=" + vpa + "&cu=INR";
@@ -23,7 +24,7 @@ if (virpa == null) {
 
     }
 
-    document.getElementById("vpa").innerHTML = vpa;
+    // document.getElementById("vpa").innerHTML = vpa;
     document.getElementById("qrcode").src = "../api?url=" + qr_string;
     document.getElementById("upibtn").href = upilink;
 
