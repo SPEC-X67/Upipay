@@ -34,13 +34,6 @@ _Everthing is pre-configured, You can just deploy it on Vercel_ <br>
 
 **You can Customize it However you Like**👍. **But don't Forget to give a Footer Credit**😉.<br><br>
 
-### Credits:
-
-Idea from [Upayi](https://github.com/cyberboysumanjay/upayi "Upayi") by [Sumanjay](https://github.com/cyberboysumanjay/ "Sumanjay")<br>
-Designed & Developed to [Me (Tuhin)](https://github.com/cachecleanerjeet "Me (Tuhin)")
-
-<br><br>
-
 <h3 align="center"># Go Cashless</h3>
 <p align="center"> <b>Made in 🇮🇳 for 🇮🇳</b></p>
 <br><br>
